@@ -1,0 +1,62 @@
+﻿@model MovieModel;
+
+<form class="w-40" asp-controller="Movie" asp-action="Add" method="post" enctype="multipart/form-data">
+    <h2 class="pb-10">Add Movie</h2>
+
+    <div class="input-container">
+        <label asp-for="Title" class="w-40">Movie Title</label>
+        <input type="text" asp-for="Title" class="input">
+    </div>
+    <div class="message-box pd-x-28 error">
+        <span asp-validation-for="Title"></span>
+    </div>
+
+    <div class="input-container">
+        <label asp-for="ReleasedYear" class="w-40">Movie Released Date</label>
+        <input type="date" asp-for="ReleasedYear" class="input">
+    </div>
+    <div class="message-box pd-x-28 error">
+        <span asp-validation-for="ReleasedYear"></span>
+    </div>
+
+    <div class="input-container">
+        <label asp-for="MovieImage" class="w-40">Movie Image</label>
+        <input type="text" asp-for="MovieImage" class="input">
+    </div>
+    <div class="message-box pd-x-28 error">
+        <span asp-validation-for="MovieImage"></span>
+    </div>
+
+    <div class="input-container">
+        <label asp-for="Cast" class="w-40">Movie Cast</label>
+        <input type="text" asp-for="Cast" class="input">
+    </div>
+    <div class="message-box pd-x-28 error">
+        <span asp-validation-for="Cast"></span>
+    </div>
+
+    <div class="input-container">
+        <label asp-for="Director" class="w-40">Movie Director</label>
+        <input type="text" asp-for="Director" class="input">
+    </div>
+    <div class="message-box pd-x-28 error">
+        <span asp-validation-for="Director"></span>
+    </div>
+
+    <div class="input-container">
+        <label asp-for="GenresIds" class="w-40">Genre</label>
+        <select asp-for="GenresIds" asp-items="Model.GenreList" class="input" multiple></select>
+    </div>
+
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert mb-1">
+            @TempData["Message"]
+        </div>
+    }
+
+    <div class="input-container">
+        <button class="btn btn-default" type="submit">Add</button>
+        <a class="btn btn-sec" asp-controller="Genre" asp-action="GenreList">All genres</a>
+    </div>
+</form>
