@@ -6,8 +6,8 @@ MovieStore is a web-based application for browsing and managing movies. The appl
 ## Features
 
 - **Browse Movies**: View a list of available movies.
-- **Search**: Search for movies based on title, genre, and more.
-- **Manage Movies**: Add, update, and delete movie records.
+- **Search**: Search for movies based on title.
+- **Manage Movies**: Add, Update, and Delete movie records.
 - **Responsive Design**: Optimized for different screen sizes with a modern and clean UI.
 
 ## Project Structure
@@ -58,13 +58,13 @@ To run the application locally, use the following commands:
    dotnet run
    ```
 
-The application will be available at `https://localhost:5001` (or as specified in the launch settings).
+The application will be available at `https://localhost:7092` (or as specified in the launch settings).
 
 ### Database Setup
 
 To configure the database, follow these steps:
 
-1. Update the connection string in `appsettings.json` to match your database configuration.
+1. Add the connection string in the `appsettings.json` to match your database configuration.
 2. Run the following command to apply migrations:
    ```bash
    dotnet ef database update
